@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "爱奇艺广告跳过",
+  "version": "1.0.0",
+  "description": "在爱奇艺网页版跳过前贴片与中插广告：中和播放器拿到的广告决策数据，不拦截任何视频请求，不触发平台的反广告拦截提示。",
+  "minimum_chrome_version": "111",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.iqiyi.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    }
+  ]
+}
